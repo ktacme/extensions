@@ -161,6 +161,8 @@ class RootBranch(inkex.Effect):
             # return inkex.errormsg(_("Please select an object"))
             # if not self.svg.selected:
             #    raise inkex.AbortExtension("Please select an object.")
+            # deprecated
+            # self.getselected()
 
             # for node in self.svg.selection.filter(PathElement):
             for node in self.svg.selection.get(inkex.PathElement(pathid)):
