@@ -20,9 +20,9 @@
 
     <effect>
 		<object-type>all</object-type>
-                <effects-menu>
-                    <submenu _name="KT"/>
-                </effects-menu>					    
+        <effects-menu>
+            <submenu _name="KT"/>
+        </effects-menu>					    
     </effect>
     <script>
         <command reldir="extensions" interpreter="python">kt-rootbranch/ktrootbranch.py</command>
