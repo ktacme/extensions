@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <_name>KT Root Branch</_name>
+    <id>ktrootbranch</id>
+	<dependency type="executable" location="extensions">kt-rootbranch/ktrootbranch.py</dependency>
+	<dependency type="executable" location="extensions">inkex.py</dependency>
+
+	<param name="eltype" type="optiongroup" appearance="combo" gui-text="Select the type of generative " precision="1">
+        <option value="1">Root</option>
+        <option value="-1">Branch</option>
+    </param>
+    <param name="elqty" type="int" min="1" max="150" _gui-text="No of elements">20</param>
+	<param name="wo" type="int" min="1" max="50" _gui-text="Wonkiness">1</param>
+	<param name="spiky" type="int" min="1" max="50" _gui-text="Spikiness">4</param>
+	<param name="maxl" type="int" min="1" max="1000" _gui-text="Element max length">300</param>
+	<param name="minl" type="int" min="1" max="500" _gui-text="Element min length">50</param>	
+	<param name="startstroke" type="float" min="1" max="50" _gui-text="Element stroke start width">5.0</param>
+	<param name="endstroke" type="float" min="1" max="50" _gui-text="Element stroke end width">5.0</param>
+    <param name="pentoggle" type="boolean" _gui-text="Lift pen for backward steps">false</param>
+
+    <effect>
+		<object-type>all</object-type>
+                <effects-menu>
+                    <submenu _name="KT"/>
+                </effects-menu>					    
+    </effect>
+    <script>
+        <command reldir="extensions" interpreter="python">kt-rootbranch/ktrootbranch.py</command>
+    </script>
+</inkscape-extension>
+ 
