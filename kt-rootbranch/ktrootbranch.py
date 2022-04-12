@@ -119,6 +119,7 @@ class RootBranch(inkex.Effect):
         y1 = page_h_mid
 
         layer = self.svg.get_current_layer().add(inkex.Group.new('RootBranch_Layer'))
+        # self.svg.get_current_layer()
 
         #parent = layer
 
@@ -164,6 +165,20 @@ class RootBranch(inkex.Effect):
             # deprecated
             # self.getselected()
 
+            """Iterate all elements, build id dicts (doc_ids, selected).
+            # old code
+            # doc = self.document if doc is None else doc
+            doc = self.document
+            id_list = list(self.options.ids)
+            for node in doc.getroot().iter(tag=inkex.etree.Element):
+                if 'id' in node.attrib:
+                    node_id = node.get('id')
+                    # self.doc_ids[node_id] = 1
+                    self.svg.get_ids()
+                    if node_id in id_list:
+                        self.selected[node_id] = node
+                        id_list.remove(node_id)
+            """
             # for node in self.svg.selection.filter(PathElement):
             for node in self.svg.selection.get(inkex.PathElement(pathid)):
                 new = []
@@ -191,7 +206,9 @@ class RootBranch(inkex.Effect):
             # do stroke to path
             numpaths = numpaths + 1
         # do select all on layer
+        # EditSelectAll
         # do Path Combine
+        # SelectionCombine
 
 
 if __name__ == '__main__':
